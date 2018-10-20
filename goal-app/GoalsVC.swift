@@ -16,12 +16,19 @@ class GoalsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+     
+        
+        
         myTableView.delegate = self
         myTableView.dataSource = self
     }
+    
+    
 
     @IBAction func myGoalButton(_ sender: UIButton) {
-        print("OK")
+        let creatGoalVc = storyboard?.instantiateViewController(withIdentifier: "CreatGoalVC")
+        presentDetal(creatGoalVc!)
     }
     
 }
