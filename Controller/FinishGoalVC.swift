@@ -7,10 +7,11 @@
 //
 
 import UIKit
-
+import CoreData
 class FinishGoalVC: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var GoalBtn: UIButton!
+   
+    @IBOutlet weak var goalButton: UIButton!
     
     @IBOutlet weak var pointsTextFild: UITextField!
     
@@ -22,7 +23,8 @@ class FinishGoalVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         pointsTextFild.delegate = self
-        GoalBtn.bindToKeyboard()
+        goalButton.bindToKeyboard()
+         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
     }
 
     func initData(description: String, type: GoalType) {
@@ -31,7 +33,36 @@ class FinishGoalVC: UIViewController, UITextFieldDelegate {
         
     }
    
-    @IBAction func createGoalBtn(_ sender: UIButton) {
+    @IBAction func createGoalbtn(_ sender: UIButton) {
+        if pointsTextFild.text != "" {
+            self.save()
+            dismiss(animated: true, completion: nil)
+        }
+       
+    }
+   
+    
+   
+    @IBAction func goBack(_ sender: UIButton) {
+        dismissDetail()
     }
     
+    
+    
+    func save() {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
+         let goal = Goal(context: managedContext)
+        goal.goalDescription = goldDescription
+        goal.goalType = goalType.rawValue
+        goal.goalCompletionValue = Int32(pointsTextFild.text!)!
+        goal.goalProgress = Int32(0)
+        
+        do{
+            try managedContext.save()
+            print("Data is saved")
+        }catch{
+            print("Could not save data")
+        }
+    }
+
 }

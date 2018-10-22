@@ -342,6 +342,7 @@
                                         <state key="normal" image="back"/>
                                         <connections>
                                             <action selector="backButtonPress:" destination="roQ-a2-BDu" eventType="touchUpInside" id="kJC-4z-jMW"/>
+                                            <action selector="goBack:" destination="BeD-B6-7gD" eventType="touchUpInside" id="nQg-2A-EI2"/>
                                             <action selector="myGoalButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sUc-xF-oZv"/>
                                         </connections>
                                     </button>
@@ -398,50 +399,49 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDV-Sy-giA">
-                                <rect key="frame" x="0.0" y="223" width="375" height="444"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXo-Xw-Doc">
+                                <rect key="frame" x="0.0" y="208" width="375" height="459"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CW-FD-vij">
-                                        <rect key="frame" x="8" y="386" width="359" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8S-Tt-AIn">
+                                        <rect key="frame" x="8" y="410" width="359" height="41"/>
                                         <color key="backgroundColor" red="0.29411764709999999" green="0.46274509800000002" blue="0.83318284200000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="7Ak-IB-ql3"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
                                         <state key="normal" title="CREATE GOAL">
                                             <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="createGoalBtn:" destination="BeD-B6-7gD" eventType="touchUpInside" id="PxG-XQ-J8t"/>
-                                            <action selector="nextBtnPress:" destination="roQ-a2-BDu" eventType="touchUpInside" id="raA-Xg-lKr"/>
+                                            <action selector="createGoalbtn:" destination="BeD-B6-7gD" eventType="touchUpInside" id="hC3-0e-ysj"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailingMargin" secondItem="8CW-FD-vij" secondAttribute="trailing" id="7Aq-js-qiq"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="8CW-FD-vij" secondAttribute="bottom" id="PnB-WH-xXS"/>
-                                    <constraint firstItem="8CW-FD-vij" firstAttribute="leading" secondItem="aDV-Sy-giA" secondAttribute="leadingMargin" id="oEj-Vf-erE"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="H8S-Tt-AIn" secondAttribute="trailing" id="6Bk-2d-A6x"/>
+                                    <constraint firstItem="H8S-Tt-AIn" firstAttribute="leading" secondItem="AXo-Xw-Doc" secondAttribute="leadingMargin" id="7nT-ta-N2V"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="H8S-Tt-AIn" secondAttribute="bottom" id="9dG-ht-WIA"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="H8S-Tt-AIn" secondAttribute="bottom" id="fbs-3D-aEj"/>
+                                    <constraint firstItem="H8S-Tt-AIn" firstAttribute="leading" secondItem="AXo-Xw-Doc" secondAttribute="leadingMargin" id="q4l-Ln-1k3"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="H8S-Tt-AIn" secondAttribute="trailing" id="v23-rK-udu"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="AXo-Xw-Doc" firstAttribute="top" secondItem="VMB-iP-xx6" secondAttribute="bottom" constant="8" id="0lA-uh-E2g"/>
                             <constraint firstItem="Zz0-qK-GUa" firstAttribute="top" secondItem="APw-8X-AzP" secondAttribute="top" id="2il-cd-SEE"/>
+                            <constraint firstItem="AXo-Xw-Doc" firstAttribute="trailing" secondItem="Ko9-Tb-zhA" secondAttribute="trailing" id="Bca-sT-CMC"/>
                             <constraint firstItem="Zz0-qK-GUa" firstAttribute="trailing" secondItem="Ko9-Tb-zhA" secondAttribute="trailing" id="Gth-Sc-ixL"/>
                             <constraint firstItem="VMB-iP-xx6" firstAttribute="top" secondItem="Zz0-qK-GUa" secondAttribute="bottom" constant="18" id="Xu8-pV-cZ8"/>
                             <constraint firstItem="Ko9-Tb-zhA" firstAttribute="trailing" secondItem="VMB-iP-xx6" secondAttribute="trailing" constant="48" id="ZLU-Ej-pz0"/>
-                            <constraint firstItem="aDV-Sy-giA" firstAttribute="top" secondItem="VMB-iP-xx6" secondAttribute="bottom" constant="23" id="aKD-10-Y0d"/>
+                            <constraint firstItem="AXo-Xw-Doc" firstAttribute="leading" secondItem="Ko9-Tb-zhA" secondAttribute="leading" id="dcH-0W-XGw"/>
                             <constraint firstItem="VMB-iP-xx6" firstAttribute="leading" secondItem="Ko9-Tb-zhA" secondAttribute="leading" constant="47" id="fMX-Ju-SPa"/>
                             <constraint firstItem="Zz0-qK-GUa" firstAttribute="leading" secondItem="Ko9-Tb-zhA" secondAttribute="leading" id="kA8-xc-2Mi"/>
-                            <constraint firstItem="aDV-Sy-giA" firstAttribute="bottom" secondItem="Ko9-Tb-zhA" secondAttribute="bottom" id="muG-n7-uS5"/>
-                            <constraint firstItem="aDV-Sy-giA" firstAttribute="leading" secondItem="Ko9-Tb-zhA" secondAttribute="leading" id="pCB-3r-n98"/>
-                            <constraint firstItem="aDV-Sy-giA" firstAttribute="trailing" secondItem="Ko9-Tb-zhA" secondAttribute="trailing" id="sIB-M5-E7m"/>
+                            <constraint firstItem="AXo-Xw-Doc" firstAttribute="bottom" secondItem="Ko9-Tb-zhA" secondAttribute="bottom" id="x5S-WM-F9H"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ko9-Tb-zhA"/>
                     </view>
                     <connections>
-                        <outlet property="GoalBtn" destination="8CW-FD-vij" id="ez5-VW-m3f"/>
+                        <outlet property="goalButton" destination="H8S-Tt-AIn" id="Yds-Jf-SkN"/>
                         <outlet property="pointsTextFild" destination="Aal-hL-yjy" id="7ws-xO-yke"/>
                     </connections>
                 </viewController>

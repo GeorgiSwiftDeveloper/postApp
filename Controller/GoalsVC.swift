@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
+let appDelegate = UIApplication.shared.delegate as? AppDelegate
 class GoalsVC: UIViewController {
 
     
     @IBOutlet weak var myTableView: UITableView!
     
+    var goals: [Goal] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,20 @@ class GoalsVC: UIViewController {
         
         myTableView.delegate = self
         myTableView.dataSource = self
+        myTableView.isHidden = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.fetch { (comlition) in
+            if comlition {
+                if goals.count >= 1 {
+                    myTableView.isHidden = false
+                }else {
+                    myTableView.isHidden = true
+                }
+            }
+        }
     }
     
     
@@ -38,14 +55,44 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return goals.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as? GoalCell
-        cell?.configureCell(description: "Eat salad 2 a week", type: .shortTerm, progress: 2)
-        return cell!
+        guard   let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as? GoalCell else {return UITableViewCell() }
+        
+        let goal = goals[indexPath.row]
+        cell.configureCell(goal: goal)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
     }
     
     
+    
+    
+    
+    func fetch(completion: (_ complete: Bool) -> ()) {
+        guard    let managedContext = appDelegate?.persistentContainer.viewContext else {return}
+        
+        let request = NSFetchRequest<Goal>(entityName: "Goal")
+        
+        do{
+            goals = try managedContext.fetch(request)
+            print("Succsesfuly")
+            completion(true)
+        }catch{
+            print("Error")
+            completion(false)
+        }
+        
+    }
 }
+
+
