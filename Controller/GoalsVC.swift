@@ -30,6 +30,10 @@ class GoalsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+                fetchRequest()
+    }
+    
+    func fetchRequest() {
         self.fetch { (comlition) in
             if comlition {
                 if goals.count >= 1 {
@@ -40,7 +44,6 @@ class GoalsVC: UIViewController {
             }
         }
     }
-    
     
 
     @IBAction func myGoalButton(_ sender: UIButton) {
@@ -74,6 +77,22 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
         return .none
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deletAction = UITableViewRowAction(style: .destructive, title: "DELETE") { (rowAction, indexPath) in
+            self.remove(atIndexPath: indexPath)
+            self.fetchRequest()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+        let addAction = UITableViewRowAction(style: .normal, title: "ADD 1") { (rowAction, indexPath) in
+            self.set(atIndexPath: indexPath)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+        addAction.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        deletAction.backgroundColor = #colorLiteral(red: 0.9597076413, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
+        return [deletAction, addAction]
+    }
+    
     
     
     
@@ -96,3 +115,33 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 
+extension GoalsVC {
+    
+    func set(atIndexPath indexPath: IndexPath) {
+        guard let managedContex = appDelegate?.persistentContainer.viewContext else {return}
+        
+        let chosenGoal = goals[indexPath.row]
+        if chosenGoal.goalProgress < chosenGoal.goalCompletionValue {
+            chosenGoal.goalProgress = chosenGoal.goalProgress + 1
+        }else {
+            return
+        }
+        do {
+            try managedContex.save()
+            print("Succsessfuly set progress")
+        }catch {
+            print("could not save \(error.localizedDescription)")
+        }
+    }
+    
+    func remove(atIndexPath indexPaty: IndexPath ) {
+        guard let managedContex = appDelegate?.persistentContainer.viewContext else {return}
+        managedContex.delete(goals[indexPaty.row])
+        
+        do{
+            try managedContex.save()
+        }catch {
+            print("Could not remove \(error.localizedDescription)")
+        }
+    }
+}

@@ -59,17 +59,17 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SxD-gj-eX5">
-                                <rect key="frame" x="76" y="160" width="223.5" height="63"/>
+                                <rect key="frame" x="72.5" y="160" width="230.5" height="64.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to POSTGOAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmw-iQ-N8R">
-                                        <rect key="frame" x="0.0" y="0.0" width="223.5" height="27.5"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="230.5" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create your GOAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oa1-Jj-VKE">
-                                        <rect key="frame" x="0.0" y="35.5" width="223.5" height="27.5"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                        <rect key="frame" x="0.0" y="35.5" width="230.5" height="29"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -134,18 +134,39 @@
                                                     <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGr-QI-kDL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="82.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMPLETE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSd-pL-cHy">
+                                                            <rect key="frame" x="103.5" y="21" width="168" height="41"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="30"/>
+                                                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="dSd-pL-cHy" firstAttribute="centerX" secondItem="bGr-QI-kDL" secondAttribute="centerX" id="adg-kn-UI0"/>
+                                                        <constraint firstItem="dSd-pL-cHy" firstAttribute="centerY" secondItem="bGr-QI-kDL" secondAttribute="centerY" id="zFB-UA-4Xn"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="bGr-QI-kDL" firstAttribute="leading" secondItem="BvD-0s-FMq" secondAttribute="leading" id="84t-wm-8aj"/>
                                                 <constraint firstItem="KPI-HK-iNE" firstAttribute="top" secondItem="BvD-0s-FMq" secondAttribute="topMargin" constant="10" id="BSh-nz-mVf"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="KPI-HK-iNE" secondAttribute="bottom" constant="10" id="IDa-HG-9n4"/>
+                                                <constraint firstAttribute="trailing" secondItem="bGr-QI-kDL" secondAttribute="trailing" id="LlS-FT-Ksv"/>
                                                 <constraint firstAttribute="bottom" secondItem="chh-9X-ynm" secondAttribute="bottom" constant="20.5" id="PqU-Ez-4Yl"/>
+                                                <constraint firstItem="bGr-QI-kDL" firstAttribute="top" secondItem="BvD-0s-FMq" secondAttribute="top" id="T8v-7g-U22"/>
                                                 <constraint firstItem="chh-9X-ynm" firstAttribute="leading" secondItem="BvD-0s-FMq" secondAttribute="leading" constant="7" id="TxM-Qs-5ug"/>
                                                 <constraint firstItem="chh-9X-ynm" firstAttribute="top" secondItem="BvD-0s-FMq" secondAttribute="top" constant="10" id="ZvL-u3-9iR"/>
+                                                <constraint firstAttribute="bottom" secondItem="bGr-QI-kDL" secondAttribute="bottom" id="dZR-XB-x4L"/>
                                                 <constraint firstItem="KPI-HK-iNE" firstAttribute="trailing" secondItem="BvD-0s-FMq" secondAttribute="trailingMargin" id="eec-ct-o5G"/>
                                                 <constraint firstItem="KPI-HK-iNE" firstAttribute="leading" secondItem="chh-9X-ynm" secondAttribute="trailing" constant="10" id="qhV-Kb-HwS"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="comletionView" destination="bGr-QI-kDL" id="pkU-qo-y1I"/>
                                             <outlet property="goalDescribLbl" destination="I5U-sB-GzQ" id="a5T-h1-gZV"/>
                                             <outlet property="goalProressLbl" destination="KPI-HK-iNE" id="apk-bJ-8tA"/>
                                             <outlet property="goalTypeLbl" destination="Fbr-lc-CnZ" id="87R-bU-Cql"/>
@@ -154,7 +175,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="V7u-zX-ShM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9hP-4K-vh4"/>
                             <constraint firstItem="SxD-gj-eX5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EaY-dl-old"/>
@@ -233,10 +254,10 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vce-8x-SeK">
                                 <rect key="frame" x="16" y="96" width="343" height="260"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What is GOAL ?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nqU-OT-vFc">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What is your GOAL ?" translatesAutoresizingMaskIntoConstraints="NO" id="nqU-OT-vFc">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="162.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -283,20 +304,20 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFi-fy-JLj">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <color key="backgroundColor" red="0.015686274510000001" green="0.64313725489999995" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.53790948959999996" green="0.89631558639999998" blue="0.36201973269999999" alpha="0.71933713570000002" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="jrz-Zu-Bes"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
                                 <state key="normal" title="NEXT">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.3411764706" green="0.1529411765" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="nextBtnPress:" destination="roQ-a2-BDu" eventType="touchUpInside" id="AMZ-Wq-I7Z"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <constraints>
                             <constraint firstItem="eN8-RS-rCY" firstAttribute="trailing" secondItem="vce-8x-SeK" secondAttribute="trailing" constant="16" id="65C-1M-8zx"/>
                             <constraint firstItem="vce-8x-SeK" firstAttribute="leading" secondItem="eN8-RS-rCY" secondAttribute="leading" constant="16" id="AUC-aJ-9Ts"/>
@@ -404,10 +425,10 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8S-Tt-AIn">
                                         <rect key="frame" x="8" y="410" width="359" height="41"/>
-                                        <color key="backgroundColor" red="0.29411764709999999" green="0.46274509800000002" blue="0.83318284200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.53725490200000003" green="0.8980392157" blue="0.36078431370000003" alpha="0.71933713570000002" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
                                         <state key="normal" title="CREATE GOAL">
-                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <color key="titleColor" red="0.3411764706" green="0.1529411765" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="createGoalbtn:" destination="BeD-B6-7gD" eventType="touchUpInside" id="hC3-0e-ysj"/>
@@ -425,7 +446,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="AXo-Xw-Doc" firstAttribute="top" secondItem="VMB-iP-xx6" secondAttribute="bottom" constant="8" id="0lA-uh-E2g"/>
                             <constraint firstItem="Zz0-qK-GUa" firstAttribute="top" secondItem="APw-8X-AzP" secondAttribute="top" id="2il-cd-SEE"/>

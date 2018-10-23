@@ -22,6 +22,7 @@ class CreatGoalVC: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        goalTextView.delegate = self
         
         nextBtn.bindToKeyboard()
         
@@ -43,7 +44,7 @@ class CreatGoalVC: UIViewController, UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         goalTextView.text = ""
-        goalTextView.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        goalTextView.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
     
     @IBAction func shortBtnPress(_ sender: UIButton) {
